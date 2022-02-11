@@ -3,4 +3,9 @@ from .models import  MyUser
 
 
 
-admin.site.register(MyUser)
+
+@admin.register(MyUser)
+class AdminMyuser(admin.ModelAdmin):
+    list_display =('username', 'last_name', 'first_name', 'is_active', 'is_staff')
+
+# admin.site.register(MyUser) 
